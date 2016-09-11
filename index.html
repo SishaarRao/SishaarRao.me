@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <!--mobile first styling-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--custom stylesheet-->
+        <link rel="stylesheet" href="style.css">
+        <!--jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style>
+            body {
+                position: relative;
+            }
+            #home {padding-top:50px;height:800px;color: #fff; background-color: #DFDCE3; padding-left: 50px}
+            #page1 {padding-top:50px;height:800px;color: #fff; background-color: #1E88E5; padding-left: 50px}
+            #page2 {padding-top:50px;height:800px;color: #fff; background-color: #673ab7; padding-left: 50px}
+            #page3 {padding-top:50px;height:800px;color: #fff; background-color: #ff9800; padding-left: 50px}
+        </style>
+        
+        <!--smooth scrolling-->
+        <script>
+            $(document).ready(function () {
+                    $('a[href^="#"]').on('click', function (e) {
+                        e.preventDefault();
+
+                        var target = this.hash,
+                        $target = $(target);
+
+                        $('html, body').stop().animate({
+                            'scrollTop': $target.offset().top - 50
+                        }, 900, 'swing', function () {
+                            window.location.hash = target;
+                        });
+                    });
+                });
+        </script>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
+                </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#page1">Page 1</a></li>
+                <li><a href="#page2">Page 2</a></li>
+                <li><a href="#page3">Page 3</a></li>
+            </ul>
+            </div>
+        </nav>
+        <div id="home">
+            <h1 class="text text-header">Home</h1>
+            <p class="text">This is home</p>
+        </div>
+        <div id="page1">
+            <h3>Section 1</h3>
+            <p>Hello World</p>
+        </div>
+        <div id="page2">
+            <h3>Section 2</h3>
+            <p>Scrollspy Test</p>
+        </div>
+        <div id="page3">
+            <h3>Section 3</h3>
+            <p>This is really cool</p>
+        </div>
+    </body>
+</html>
