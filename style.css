@@ -4,18 +4,28 @@ html,body{
 /*    background-color: #DFDCE3;*/
 }
 
+.text{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+}
+
 .text-header-description{
     color: #465C8B;
     text-align: left;
     font-size: 25px;
-    font-family: 'Oswald', sans-serif;
 }
 
 .text-header{
-    font-size: 80px;
+    font-size: 100px;
     color: #465C8B;
     text-align: left;
-    font-family: 'Oswald', sans-serif;
+}
+
+.text-body-description
+{
+    color: #465C8B;
+    text-align: left;
+    font-size: 18px;
 }
 
 .custom_nav li a{
