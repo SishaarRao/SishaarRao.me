@@ -8,15 +8,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
         <style>
             body {
                 position: relative;
             }
-            #home {padding-top:50px;height:800px;color: #fff; background-color: #DFDCE3; padding-left: 50px}
-            #page1 {padding-top:50px;height:800px;color: #fff; background-color: #CAEBF2; padding-left: 50px}
-            #page2 {padding-top:50px;height:800px;color: #fff; background-color: #673ab7; padding-left: 50px}
-            #page3 {padding-top:50px;height:800px;color: #fff; background-color: #ff9800; padding-left: 50px}
+            #home {padding-top:30px;height:800px;color: #fff; background-color: #DFDCE3; padding-left: 50px;}
+            #page1 {padding-top:30px;height:800px;color: #fff; background-color: #CAEBF2; padding-left: 50px;}
+            #page2 {padding-top:30px;height:800px;color: #fff; background-color: #673ab7; padding-left: 50px;}
+            #page3 {padding-top:30px;height:800px;color: #fff; background-color: #ff9800; padding-left: 50px;}
+            #about-me-header {color: #A9A9A9}
+            #aboutme {background-color:#CAEBF2; border: transparent;}
         </style>
+        
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
         
         <script>
             $(document).ready(function () {
@@ -32,10 +37,10 @@
                             window.location.hash = target;
                         });
                     });
+                    $("#aboutme").load("aboutme.txt");
                 });
         </script>
         
-        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     </head>
     
     
@@ -47,7 +52,7 @@
                 </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#page1">Page 1</a></li>
+                <li><a href="#page1">About Me</a></li>
                 <li><a href="#page2">Page 2</a></li>
                 <li><a href="#page3">Page 3</a></li>
             </ul>
@@ -67,11 +72,11 @@
         </script>
         <div id="page1">
             <h3 class="text text-header">About Me</h3>
-            <div class="row">
-                <div class="col-md-7" id=about-me-description>
-                    <p class="text text-body-description">
-                        Hello! My name is Sishaar Rao and I'm currently a Senior at TJHSST. 
-                    </p>
+            <div class="row" style="padding-top:20px;">
+                <div class="col-md-7 text text-body-description" id="aboutme" style="white-space: pre-wrap;">
+                </div>
+                <div class="col-md-5">
+                    <img src="aboutmepic.jpg" class="img-rounded img-responsive tocenter" alt="aboutme-pic" width="450" height=auto>
                 </div>
             </div>
             
