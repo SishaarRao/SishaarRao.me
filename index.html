@@ -4,21 +4,41 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="style.css">
         <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+        
+        <link href="mdb.min.css" rel="stylesheet">
+        <script src="mdb.min.js"></script>
+        
+        <link rel="stylesheet" href="social-style.css">        
+        
+        <link href='rotating-card.css' rel='stylesheet' />
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+        <script src="jquery.textfill.min.js"></script>
+        
+
+        
         <style>
             body {
                 position: relative;
             }
-            #home {padding-top:30px;height:800px;color: #fff; background-color: #DFDCE3; padding-left: 50px;}
-            #page1 {padding-top:30px;height:800px;color: #fff; background-color: #CAEBF2; padding-left: 50px;}
-            #page2 {padding-top:30px;height:800px;color: #fff; background-color: #673ab7; padding-left: 50px;}
-            #page3 {padding-top:30px;height:800px;color: #fff; background-color: #ff9800; padding-left: 50px;}
+            #home {color: #fff; background-color: #A9A9A9;}
+/*            padding-left: 50px; padding-bottom: 100px; padding-right: 50px;*/
+            #page1 {padding-top:30px;height:auto;color: #fff; background-color: #FFFFFF; padding-left: 50px;padding-bottom: 100px;padding-right: 50px;}
+            #page2 {padding-top:30px;height:auto;color: #fff; background-color: #f2f2f2; padding-left: 50px; padding-bottom: 100px;padding-right: 50px;}
+            #page3 {padding-top:30px;height:auto;color: #fff; background-color: #FFFFFF; padding-left: 50px;padding-bottom: 100px;padding-right: 50px;}
+            #page4 {padding-top:30px;height:auto;color: #fff; background-color: #f2f2f2; padding-left: 50px;padding-bottom: 100px;padding-right: 50px;}
+            #page5 {padding-top:30px;height:auto;color: #fff; background-color: #FFFFFF; padding-left: 50px;padding-bottom: 100px;padding-right: 50px;}
+            #page6 {padding-top:30px;height:auto;color: #fff; background-color: #f2f2f2; padding-left: 50px;padding-bottom: 100px;padding-right: 50px;}
+            
             #about-me-header {color: #A9A9A9}
-            #aboutme {background-color:#CAEBF2; border: transparent;}
+            #aboutme {background-color:transparent; border: transparent;}
+            .sr .reveal { visibility: hidden; }
         </style>
         
         <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
@@ -38,57 +58,758 @@
                         });
                     });
                     $("#aboutme").load("aboutme.txt");
-                });
+                    $('.jtextfill').textfill({ maxFontPixels: 36 });
+                    $('[rel="tooltip"]').tooltip();
+                    });
+        </script>
+        <script>
+            window.sr = ScrollReveal();
+            if (sr.isSupported()) {
+                document.documentElement.classList.add('sr');
+            }
+        </script>
+        <script type="text/javascript">
+            function rotateCard(btn){
+                var $card = $(btn).closest('.card-container');
+                console.log($card);
+                if($card.hasClass('hover')){
+                    $card.removeClass('hover');
+                } else {
+                    $card.addClass('hover');
+                }
+            }
+        </script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46172202-4', 'auto');
+          ga('send', 'pageview');
+
         </script>
         
     </head>
     
     
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Sishaar Rao</a>
+        <div class="container-fluid">
+            <nav id="custom-nav" class="navbar navbar-light bg-faded navbar-fixed-top">
+                <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+                &#9776;
+                </button>
+                <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+                    <a class="navbar-brand" href="index.html">Sishaar Rao</a>
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#page1">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#page2">Work Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#page3">Projects & Research</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#page4">Volunteering</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#page5">Leadership</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#page6">Contact Me!</a>
+                        </li>
+                    </ul>
                 </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#page1">About Me</a></li>
-                <li><a href="#page2">Page 2</a></li>
-                <li><a href="#page3">Page 3</a></li>
-            </ul>
+            </nav>
+            
+            <div id="home" class="bgimg">
+                <img src="img/headerimg.jpg">
+                <div>
+                    <h3 class="text text-header">Sishaar Rao</h3>
+                    <a class="text text-header-description" href="https://github.com/SishaarRao" title="GitHub"> Coder. </a>
+                    <a class="text text-header-description" href="https://www.youtube.com/playlist?list=PLi9RPG8gtFjQyJuth9aVZWaYa6rvSwAGv"> Dancer. </a>
+                    <a class="text text-header-description" href="https://www.google.com/#safe=strict&q=closest+taco+bell+to+me" > Taco-Bell Enthusiast. </a>
+                </div>
             </div>
-        </nav>
-        
-        <div id="home" class="bgimg">
-            <h1 class="text text-header">Sishaar Rao</h1>
-            <a class="text text-header-description" href="https://github.com/SishaarRao" title="GitHub" data-toggle="popover" data-trigger="hover" data-content="https://github.com/SishaarRao" data-placement="bottom" > Coder. </a>
-            <a class="text text-header-description" href="https://www.youtube.com/playlist?list=PLi9RPG8gtFjQyJuth9aVZWaYa6rvSwAGv" title="Youtube Channel" data-toggle="popover" data-trigger="hover" data-content="I-Nite, Homecoming Askings, and Musical Extravaganzas!" data-placement="bottom" > Dancer. </a>
-            <a class="text text-header-description" href="https://www.google.com/#safe=strict&q=closest+taco+bell+to+me" title="I Recommend:" data-toggle="popover" data-trigger="hover" data-content="Cheesy Crunch Burrito, Grilled XXL Stuft Burrito, Locos Tacos" data-placement="bottom" > Taco-Bell Enthusiast. </a>
-        </div>
-        <script>
-            $(document).ready(function(){
-                $('[data-toggle="popover"]').popover(); 
-            });
-        </script>
-        <div id="page1">
-            <h3 class="text text-header">About Me</h3>
-            <div class="row" style="padding-top:20px;">
-                <div class="col-md-7 text text-body-description" id="aboutme" style="white-space: pre-wrap;">
+
+            <div id="page1">
+                <h3 class="text text-header reveal" id=aboutme-header>About Me</h3>
+                <div class="row" style="padding-top:20px; padding-bottom:20px;">
+                    <div class="col-md-7 text text-body-description reveal" id="aboutme" style="white-space: pre-wrap;">
+                    </div>
+                    <div class="col-md-5">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel" style="max-width:90%">
+                            <!--Indicators-->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-1" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-1" data-slide-to="2"></li>
+                            </ol>
+                            <!--/.Indicators-->
+
+                            <!--Slides-->
+                            <div class="carousel-inner" role="listbox">
+                                <!--First slide-->
+                                <div class="carousel-item active">
+                                    <img src="img/aboutmepic-1.jpg" alt="First slide" width="450" height=auto>
+                                </div>
+                                <!--/First slide-->
+
+                                <!--Second slide-->
+                                <div class="carousel-item">
+                                    <img src="img/aboutmepic-2.jpg" alt="Second slide" width="450" height=auto>
+                                </div>
+                                <!--/Second slide-->
+
+                                <!--Third slide-->
+                                <div class="carousel-item">
+                                    <img src="img/aboutmepic-3.jpg" alt="Third slide" width="450" height=auto>
+                                </div>
+                                <!--/Third slide-->
+                            </div>
+                            <!--/.Slides-->
+
+                            <!--Controls-->
+                            <a class="left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
+                                <span class="icon-prev" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-1" role="button" data-slide="next">
+                                <span class="icon-next" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <img src="aboutmepic.jpg" class="img-rounded img-responsive tocenter" alt="aboutme-pic" width="450" height=auto>
+            </div>
+
+            <div id="page2">
+                <h3 class="text text-header reveal" id="workexperience-header">Work Experience</h3>
+                <div class="row" style="padding-top:20px;">
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card" style="padding-right:50px;">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;">
+                                        <img src="http://razorx2.com/wp-content/uploads/2016/02/RazorX2-Logo1.png" style="padding: 10px;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name">RazorX2</h3>
+                                            <div class="profession">Intern</div>
+                                            <div class="text text-center">
+                                            Intern at RazorX2, an IT consulting firm based in Reston. Worked extensively with Virtual Reality, 3D printers, and Android Development. 
+                                            </div>
+                                            <div class="footer text" style="max-height:30px;">
+                                                2016
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header" style="height:auto;">
+                                        <h5 class="motto">RazorX2</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Job Description</h4>
+                                            <div id="textfill1" class="text-center" style="height:inherit;">
+                                                <span>
+                                                Spent 6 weeks at RazorX2, an IT consulting firm that works with the Federal Government and Local Contractors. Adopted Agile methodology and worked with 3D modelling, texturing, and animating. Created a game for the HTC Vive using both the Unity Engine and Blender. Created a "Magic Mirror", or a mirror with a user interface that uses facial recognition to deliver personalized data. Assembled a 3D Printer. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;">
+                                        <img src="http://www2.fcps.edu/FtBelvoirES/images/FCPSLogo.jpg" style="padding: 10px;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">FCPS Summer School</h3>
+                                            <div class="profession text">Teaching Assistant</div>
+                                            <div class="text text-center">
+                                            Teaching Assistant for TJHSST Summer School in Computer Science. Taught AP Curriculum while assisting wherever needed. 
+                                            </div>
+                                            <div class="footer text" style="max-height:30px;">
+                                                2015
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto">FCPS</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Job Description</h4>
+                                            <div id="textfill2" class="text-center" style="height:inherit;">
+                                                <span>
+                                                Hired for 8 weeks as a Teaching Assistant for TJHSST through Fairfax County Public Schools with the AP Computer Science curriculum. Tutored students in topics such as Recursion and Advanced Data Structures, graded papers and projects, gave lectures in game design, and assisted in administrative duties. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;">
+                                        <img src="https://www.icivics.org/sites/all/themes/icw2/images/iCivicsLogoWhite.svgz" style="padding: 10px;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">Self Employed</h3>
+                                            <div class="profession text">Tutor</div>
+                                            <div class="text text-center">
+                                            Self-employed as a tutor for middle school students in Math, English, Science, and History. 
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2015
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto">Self</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Job Description</h4>
+                                            <div id="textfill3" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 Currently work as a tutor multiple times a week in Math, English, Science, and History. I help with homework from school along with preparation for Mathematics contests such as AMC. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
                 </div>
+            </div>
+            <div id="page3">
+                <h3 class="text text-header reveal" id="projects-header">Projects & Research</h3>
+                <div class="row" style="padding-top:20px;">
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;">
+                                        <img src="https://photos.prnewswire.com/prnfull/20130906/CL75373LOGO" style="padding: 30px;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">TJ.WEBASSIGN</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            A hub for Webassign problems and solutions in order to simplify the process of receiving help and reviewing older problem sets. 
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2016
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto">In Progress: V.1.1</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Description</h4>
+                                            <div id="textfill4" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 Webassign is a platform used to assign word problems to students. TJ.WEBASSIGN is a hub for Webassign problems that will simplify receiving help and studying for cumulative assignments. This project creates an alternate repository for problems, as many at TJ currently use Facebook for help. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;text-align:center;">
+                                        <img src="img/tunemeup-logo.png" style="padding: 10px; height:150px; width:auto;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">Tune Me Up!</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            A way to make music more social! Through this application, phones play in unison to amplify music. 
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2015
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto">In Development</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Description</h4>
+                                            <div id="textfill5" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 Tune Me Up! (name subject to change) is an application that will allow people to amplify music played on a device through connections with other selected devices by synchronizing timing and playing in unison. Uses a process called "Bluetooth Chaining".
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;text-align:center;">
+                                        <img src="img/staysafe-logo.png" style="padding: 10px; height:150px; width:auto;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">StaySafe</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            A mobile application developed to ensure the safety of a child through GPS location of their cell-phone.
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2015
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto">In Testing/Q&A</h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Description</h4>
+                                            <div id="textfill5" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 StaySafe was inspired by a recent string of disappearences within my state and community. This application utilizes GPS data to compute a path of a child, whether it be to school, activities, etc. in order to notify the parent when there is significant deviation from its course. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    
+                </div>
+                <div class="row" style="padding-top:20px;">
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;text-align:center;">
+                                        <img src="img/eic-logo.png" style="padding: 10px; height:150px; width:auto;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">EV Charging Station Committee</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            Head of committee that worked with school and school board to pass legislation allowing EV charging station installation on campus.  
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2014
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto"></h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Role</h4>
+                                            <div id="textfill7" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 Head of Committee that worked with school officials along with school board, local, and state officials in order to pass legislation permitting the installation of EV Charging Stations in FCPS schools. Spent significant time analyzing current environmental laws while spearheadeding efforts to push for legislative changes and receive corporate sponsorship. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;text-align:center;">
+                                        <img src="https://www.tjhsst.edu/parents-community/ptsa/images/tj-logos/tjlogo4.gif" style="padding: 10px; height:150px; width:auto;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">Gravity & Planarian</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            The Effect of Exposure Time to Increased Gravity on the Tissue Regeneration of Dugesia dorotocehala
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2015
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto"></h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Description</h4>
+                                            <div id="textfill8" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 Research Paper was written about the effect of exposure time and increased gravity on tissue regeneration rate of Planarian. We reached the conclusion that there was no statistically significant correlation between the two. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                </div>
+            </div>
+            <div id="page4">
+                <h3 class="text text-header reveal" id="volunteering-header">Volunteering</h3>
+                <div class="row" style="padding-top:20px;">
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;">
+                                        <img src="http://worldheritage.si.edu/assets/img/si_large.gif" style="padding: 30px;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">Q?Rius</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            Volunteered in Q?Rius, an interactive exhibit in the Smithsonian Institute for Natural History. 
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2014
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto"></h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Role</h4>
+                                            <div id="textfill9" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 Volunteered in Q?Rius, an interactive exhibit devoted to exposing visitors of all ages to Natural History artifacts. Trained to interact with visitors with physical and mental disabilities. Learned a variety of information in Natural History Subjects i.e. Marine Biology, Human Anthropology, Paleontology, Insectology, Taxidermy, etc.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="width=inherit; text-align:center;">
+                                        <img src="img/life-logo.png" style="padding: 20px; height:150px; width:auto;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">LIFE</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            Mentor and tutor to mentally and physically challenged students in elementary grades in STEM subjects
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2014
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto"></h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Role</h4>
+                                            <div id="textfill10" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 Mentor and Tutor through LIFE. Worked with mentally and physically disabled students in elementary grades and tutored them in STEM subjects. Used lectures followed by exciting experiments in order to illustrate scientific concepts and effectively engage them in the learning experience.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div> 
+                </div>
+            </div>
+            <div id="page5">
+                <h3 class="text text-header reveal" id="leadership-header">Leadership</h3>
+                <div class="row" style="padding-top:20px;">
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit; text-align:center;">
+                                        <img src="https://www.tjhsst.edu/parents-community/ptsa/images/tj-logos/tjlogo4.gif" style="padding: 10px; height:150px; width:auto;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">Swing Dance Team</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            Captain of audition based dance team that performs a dance style popular in the 1920s to 50s.
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2013
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto"></h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Role</h4>
+                                            <div id="textfill11" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 Choreographed dances for competitions and performances in and out of school. Performed in multiple International-Nights, Talent Shows, and performances in Glen Echo. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit; text-align:center;">
+                                        <img src="https://www.tjhsst.edu/parents-community/ptsa/images/tj-logos/tjlogo4.gif" style="padding: 10px; height:150px; width:auto;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">TJ.COMEDY</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            President of club that teaches skills devoted to creative and humorous writing, producing, acting, and video editing through the creation of comedy sketches.
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2013
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto"></h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Role</h4>
+                                            <div id="textfill12" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 Led club that creates sketches akin to those found on Saturday Night Live, The Late Night Show, etc. In charge of approving ideas, writing sketches, creating screenplay, and directing filming. We teach and apply writing and filmmaking skills to publish our work within our school using students as actors. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;text-align:center;">
+                                        <img src="http://files.leagueathletics.com/Images/Club/8563/logo%20magnet.jpg" style="padding: 10px; height:150px; width:auto;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">Men's Basketball Coach</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            Coach for 8th Grade Men's Basketball in Farmwell Station Basketball League
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2015
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto"></h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Role</h4>
+                                            <div id="textfill13" class="text-center" style="height:inherit;">
+                                                <span>
+                                                Coach for 8th Grade Men's Basketball in FSBL. In charge of teaching players basketball skills while instilling the values of sportsmanship, respect, and determination despite all odds. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                    
+                </div>
+                <div class="row" style="padding-top:20px;">
+                    <div class="col-md-4">
+                        <div class="card-container text">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover" style="height=inherit;text-align:center;">
+                                        <img src="img/codet-logo.png" style="padding: 15px;">
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h3 class="name text">Project CodeT</h3>
+                                            <div class="profession text"></div>
+                                            <div class="text text-center">
+                                            Chief Technology Officer of Project CodeT, a nonprofit that exposes elementary school students to Computer Science through interactive workshops 
+                                            </div>
+                                            <div class="footer text" style="max-height:10px;">
+                                                2014
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back">
+                                    <div class="header">
+                                        <h5 class="motto"></h5>
+                                    </div>
+                                    <div class="content">
+                                        <div class="main">
+                                            <h4 class="text-center">Role</h4>
+                                            <div id="textfill14" class="text-center" style="height:inherit;">
+                                                <span>
+                                                 CTO of nonprofit that would hold various Computer Science workshops in elementary and middle schools in topics such as HTML, CSS, Python, and Scratch programming. In charge of developing curriculum that would engage students and excite them about applying CS to their interests. 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div> <!-- end card-container -->
+                    </div>
+                </div>    
             </div>
             
-        </div>
-        
-        <div id="page2">
-            <h3>About Me</h3>
-            <p>Scrollspy Test</p>
-        </div>
-        <div id="page3">
-            <h3>Section 3</h3>
-            <p>This is really cool</p>
+            <div id="page6">
+                <h3 class="text text-header reveal" id="contactme-header">Contact Me!</h3>
+                <div class="row">
+                    <div class="col-md-3 text-header-description" style="text-align:center;color: #465C8B;">
+                        <img class="img-circle img-responsive" src="img/contact-me.jpeg" style="height:200px; width:auto;">
+                    </div>
+                    <div class="col-md-9" style="text-align:center;">
+                        <a onclick="window.location.href='mailto:sishaar@gmail.com'" class="btn azm-social azm-btn azm-border-bottom azm-google-plus"><i class="fa fa-google-plus"></i> Sishaar Rao</a>
+                        <a href="https://www.facebook.com/public/Sishaar-Rao" class="btn azm-social azm-btn azm-border-bottom azm-facebook"><i class="fa fa-facebook"></i> Sishaar Rao</a>
+                        <a href="https://twitter.com/sishaar" class="btn azm-social azm-btn azm-border-bottom azm-twitter"><i class="fa fa-twitter"></i> Sishaar Rao</a>
+                        <a href="https://github.com/SishaarRao" class="btn azm-social azm-btn azm-border-bottom azm-github"><i class="fa fa-github"></i> Sishaar Rao</a>
+                        <a href="https://www.linkedin.com/in/sishaarrao" class="btn azm-social azm-btn azm-border-bottom azm-linkedin"><i class="fa fa-linkedin"></i> Sishaar Rao</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DO ALL TEXT FILLS -->
+            <script>
+                $('#textfill1').textfill({});
+                $('#textfill2').textfill({});
+                $('#textfill3').textfill({});
+                $('#textfill4').textfill({});
+                $('#textfill5').textfill({});
+                $('#textfill6').textfill({});
+                $('#textfill7').textfill({});
+                $('#textfill8').textfill({});
+                $('#textfill9').textfill({});
+                $('#textfill10').textfill({});
+                $('#textfill11').textfill({});
+                $('#textfill12').textfill({});
+                $('#textfill13').textfill({});
+                $('#textfill14').textfill({});
+            </script>
+            
+            <script>
+                sr.reveal('#aboutme', {duration: 500, reset: false, delay: 1000, easing:'ease-in'});
+                sr.reveal('#aboutme-header', {duration: 500, reset: false, easing:'ease-in'});
+                sr.reveal('#workexperience-header', {duration: 500, reset: false, easing:'ease-in'});
+                sr.reveal('#projects-header', {duration: 500, reset: false, easing:'ease-in'});
+                sr.reveal('#volunteering-header', {duration: 500, reset: false, easing:'ease-in'});
+                sr.reveal('#leadership-header', {duration: 500, reset: false, easing:'ease-in'});
+                sr.reveal('#contactme-header', {duration: 500, reset: false, easing:'ease-in'});
+            </script>
+            
+            
+            
         </div>
     </body>
 </html>
